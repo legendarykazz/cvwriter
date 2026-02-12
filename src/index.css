@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-gray-900;
+    }
+}
+
+@media print {
+    @page {
+        margin: 15mm 15mm 15mm 15mm;
+        size: A4 portrait;
+    }
+
+    body {
+        background: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hide all UI elements */
+    header,
+    nav,
+    button,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Target the main layout containers to remove flex/grid constraints during print */
+    #root>div {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* Hide the sidebar container specifically if it doesn't have a specific tag */
+    /* Based on App.tsx structure: 
+     <div className="hidden md:block"> references sidebar
+     <div className="md:hidden ..."> references mobile nav
+  */
+    .flex.flex-col.md\:flex-row {
+        display: block !important;
+    }
+
+    /* Hide sidebar wrapper */
+    .hidden.md\:block,
+    .md\:hidden {
+        display: none !important;
+    }
+
+    /* Reset the preview container styles */
+    .flex-1.bg-gray-100 {
+        background: white !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    /* Target the CV Preview container */
+    #cv-preview {
+        transform: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        border: none !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: auto !important;
+        padding: 0 !important;
+    }
+
+    /* Hide the form editor column */
+    /* The form is in: <div className="w-full lg:w-1/2 ..."> */
+    .w-full.lg\:w-1\/2.order-2.lg\:order-1 {
+        display: none !important;
+    }
+
+    /* Ensure the preview column takes full width */
+    .w-full.lg\:w-1\/2.bg-gray-200 {
+        width: 100% !important;
+        background: white !important;
+        position: static !important;
+        overflow: visible !important;
+        display: block !important;
+        border: none !important;
+    }
+
+    /* Hide the zoom controls */
+    .absolute.top-4.right-4 {
+        display: none !important;
+    }
+
+    /* Ensure proper page breaks */
+    .break-inside-avoid {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
