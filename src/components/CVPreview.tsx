@@ -33,10 +33,10 @@ export const CVPreview: React.FC<CVPreviewProps> = ({ data }) => {
     };
 
     return (
-        <div className="flex-1 bg-gray-100 p-8 overflow-hidden flex flex-col items-center">
+        <div className="flex-1 bg-gray-100 p-2 sm:p-4 md:p-8 overflow-auto flex flex-col">
             <div
                 id="cv-preview"
-                className="w-[210mm] min-h-[297mm] bg-white shadow-2xl p-8 border-2 border-gray-300 transform origin-top scale-[0.6] sm:scale-[0.7] md:scale-[0.85] lg:scale-100 transition-transform"
+                className="w-full min-h-[297mm] bg-white shadow-lg sm:shadow-2xl p-4 sm:p-6 md:p-8 border border-gray-200 sm:border-2 sm:border-gray-300"
             >
                 {renderTemplate()}
             </div>

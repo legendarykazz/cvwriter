@@ -8,10 +8,10 @@ export const NigerianTemplate: React.FC<{ data: CVData }> = ({ data }) => {
         <div className="h-full flex flex-col text-gray-900 font-sans bg-white">
             {/* Header with Green Bottom Border */}
             <div className="text-center py-4 px-6 border-b-4 border-green-700">
-                <h1 className="text-3xl font-bold uppercase tracking-wide mb-2 text-gray-900">
+                <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-2 text-gray-900">
                     {personalInfo.fullName || 'YOUR NAME'}
                 </h1>
-                <div className="text-sm space-y-0.5 text-gray-900">
+                <div className="text-xs md:text-sm space-y-0.5 text-gray-900">
                     {personalInfo.address && <div>{personalInfo.address}</div>}
                     <div>
                         {personalInfo.email && <span>{personalInfo.email}</span>}
@@ -26,7 +26,7 @@ export const NigerianTemplate: React.FC<{ data: CVData }> = ({ data }) => {
                 {/* Career Objective */}
                 {personalInfo.summary && (
                     <section className="break-inside-avoid">
-                        <h2 className="text-base font-bold uppercase mb-2 border-b-2 border-gray-900 pb-1">
+                        <h2 className="text-sm md:text-base font-bold uppercase mb-2 border-b-2 border-gray-900 pb-1">
                             Career Objective
                         </h2>
                         <p className="text-sm leading-relaxed text-justify">
@@ -37,10 +37,10 @@ export const NigerianTemplate: React.FC<{ data: CVData }> = ({ data }) => {
 
                 {/* Personal Data */}
                 <section className="break-inside-avoid">
-                    <h2 className="text-base font-bold uppercase mb-3 border-b-2 border-gray-900 pb-1">
+                    <h2 className="text-sm md:text-base font-bold uppercase mb-3 border-b-2 border-gray-900 pb-1">
                         Personal Data
                     </h2>
-                    <div className="text-sm space-y-2">
+                    <div className="text-xs md:text-sm space-y-2">
                         <div className="grid grid-cols-3 gap-4">
                             <div className="font-bold">Sex:</div>
                             <div className="col-span-2">{personalInfo.gender || ''}</div>
