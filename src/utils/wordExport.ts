@@ -206,7 +206,7 @@ export const exportToWord = async (data: CVData) => {
                         }),
                         new Paragraph({
                             text: exp.location,
-                            spacing: { after: 100, left: 240 },
+                            spacing: { after: 100 },
                         }),
                     ]),
                 ] : []),
@@ -228,7 +228,7 @@ export const exportToWord = async (data: CVData) => {
                     }),
                     ...hobbies.map(hobby => new Paragraph({
                         text: hobby.name,
-                        spacing: { after: 50, left: 360 },
+                        spacing: { after: 50 },
                     })),
                 ] : []),
 
@@ -249,11 +249,11 @@ export const exportToWord = async (data: CVData) => {
                     }),
                     ...skills.map(skill => new Paragraph({
                         text: skill.name,
-                        spacing: { after: 50, left: 360 },
+                        spacing: { after: 50 },
                     })),
                     ...accomplishments.map(acc => new Paragraph({
                         text: acc.description,
-                        spacing: { after: 50, left: 360 },
+                        spacing: { after: 50 },
                     })),
                 ] : []),
 
@@ -274,7 +274,7 @@ export const exportToWord = async (data: CVData) => {
                     }),
                     new Paragraph({
                         text: hobbies.map(h => h.name).join(', ') + '.',
-                        spacing: { after: 100, left: 360 },
+                        spacing: { after: 100 },
                     }),
                 ] : []),
 
@@ -295,7 +295,7 @@ export const exportToWord = async (data: CVData) => {
                     }),
                     ...languages.map(lang => new Paragraph({
                         text: `• ${lang.name}`,
-                        spacing: { after: 50, left: 360 },
+                        spacing: { after: 50 },
                     })),
                 ] : []),
 
@@ -316,7 +316,7 @@ export const exportToWord = async (data: CVData) => {
                     }),
                     ...referees.flatMap(ref => [
                         new Paragraph({
-                            spacing: { after: 50, left: 240 },
+                            spacing: { after: 50 },
                             children: [
                                 new TextRun({ text: '⭘ ' }),
                                 new TextRun({ text: ref.fullName, bold: true }),
@@ -324,15 +324,15 @@ export const exportToWord = async (data: CVData) => {
                         }),
                         ...(ref.position ? [new Paragraph({
                             text: ref.position,
-                            spacing: { after: 50, left: 360 },
+                            spacing: { after: 50 },
                         })] : []),
                         new Paragraph({
                             text: `Tel: ${ref.phone}`,
-                            spacing: { after: 50, left: 360 },
+                            spacing: { after: 50 },
                         }),
                         ...(ref.email ? [new Paragraph({
                             text: `Email: ${ref.email}`,
-                            spacing: { after: 100, left: 360 },
+                            spacing: { after: 100 },
                         })] : []),
                     ]),
                 ] : []),
